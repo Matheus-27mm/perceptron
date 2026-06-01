@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# live-server temp files
+*.tmp.*
+
+# dev/verification screenshots (landing uses no local images)
+*.png

@@ -1,0 +1,13 @@
+{
+  "name": "perceptron-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page da Perceptron.py",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html --no-css-inject",
+    "start": "live-server --port=3000 --open=index.html --no-css-inject"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
