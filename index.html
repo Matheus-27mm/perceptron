@@ -414,8 +414,19 @@
     z-index: 1;
     pointer-events: none;
     background:
-      linear-gradient(to right, rgba(10,9,14,0.85), transparent 26%, transparent 74%, rgba(10,9,14,0.85)),
-      linear-gradient(to bottom, transparent 42%, rgba(18,18,20,0.55) 78%, var(--bg) 100%);
+      /* readability scrim behind the left-aligned hero copy (keeps the right side / 3D clearer) */
+      linear-gradient(to right,
+        rgba(6,5,9,0.96) 0%,
+        rgba(6,5,9,0.86) 34%,
+        rgba(6,5,9,0.48) 58%,
+        rgba(6,5,9,0.12) 78%,
+        transparent 88%),
+      /* vertical depth: a touch at the top, grounded at the bottom */
+      linear-gradient(to bottom,
+        rgba(10,9,14,0.40) 0%,
+        rgba(10,9,14,0.14) 32%,
+        rgba(18,18,20,0.58) 80%,
+        var(--bg) 100%);
   }
   /* seam between hero and the rest — fades the opaque hero into the aurora */
   .hero-seam {
@@ -436,6 +447,10 @@
   .hero .wrap { position: relative; z-index: 2; pointer-events: none; }
   .hero-copy { max-width: 46rem; }
   .hero-copy a, .hero-copy button { pointer-events: auto; }
+  /* legibility for the smaller hero labels over the moving galaxy */
+  .hero-copy .eyebrow { text-shadow: 0 1px 8px rgba(0,0,0,0.8); }
+  .hero-meta .item .k,
+  .hero-meta .item .l { text-shadow: 0 1px 8px rgba(0,0,0,0.85); }
 
   h1.hero-title {
     font-size: clamp(2.4rem, 6vw, 4.7rem);
@@ -444,17 +459,30 @@
     letter-spacing: -0.025em;
     margin-top: 22px;
     text-wrap: balance;
+    /* dark outline that hugs the glyphs + soft glow → readable over any frame of the galaxy */
+    text-shadow:
+      -1px -1px 0 rgba(0,0,0,0.65),
+       1px -1px 0 rgba(0,0,0,0.65),
+      -1px  1px 0 rgba(0,0,0,0.65),
+       1px  1px 0 rgba(0,0,0,0.65),
+       0 3px 22px rgba(0,0,0,0.75);
   }
   h1.hero-title .hl { color: var(--accent-soft); }
   .hero-title .dt { display: inline; }
   @media (max-width: 640px) { .hero-title .dt { display: none; } }
   .hero-sub {
-    color: var(--text-dim);
+    color: rgba(236, 236, 242, 0.96);
     font-size: clamp(1rem, 1.5vw, 1.18rem);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.45;
     max-width: 38em;
     margin-top: 24px;
+    text-shadow:
+      -1px -1px 0 rgba(0,0,0,0.55),
+       1px -1px 0 rgba(0,0,0,0.55),
+      -1px  1px 0 rgba(0,0,0,0.55),
+       1px  1px 0 rgba(0,0,0,0.55),
+       0 2px 14px rgba(0,0,0,0.7);
   }
   .hero-actions {
     display: flex;
@@ -903,6 +931,13 @@
   @media (max-width: 920px) {
     .hero { min-height: auto; padding-top: 116px; padding-bottom: 72px; }
     .hero-galaxy { position: absolute; }
+    /* text spans full width on mobile — use a uniform scrim instead of the left one */
+    .hero-vignette { background:
+      linear-gradient(to bottom,
+        rgba(6,5,9,0.70) 0%,
+        rgba(6,5,9,0.60) 45%,
+        rgba(18,18,20,0.80) 85%,
+        var(--bg) 100%); }
     .pillars { grid-template-columns: 1fr; }
     .diff-grid { grid-template-columns: 1fr; }
     .stack-grid { grid-template-columns: repeat(2, 1fr); }
