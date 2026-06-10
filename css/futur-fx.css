@@ -1,0 +1,200 @@
+/* ============================================================
+   PERCEPTRON — camada futurista
+   Tudo gated sob html.futur (ligável/desligável via Tweaks).
+   Dosagem proposital: sutil, premium, nada gritando.
+   ============================================================ */
+
+/* ---------- (grão/scanlines removidos — visual "captura de câmera" descartado) ---------- */
+
+/* ---------- detalhes HUD nos cards ---------- */
+html.futur .stack-card { position: relative; }
+.hud-corners { display: none; }
+html.futur .hud-corners {
+  display: block;
+  position: absolute;
+  inset: 9px;
+  pointer-events: none;
+  opacity: 0.3;
+  transition: opacity .3s ease;
+}
+.hud-corners::before,
+.hud-corners::after {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--accent-soft);
+}
+.hud-corners::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.hud-corners::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+html.futur .card3d:hover .hud-corners,
+html.futur .stack-card:hover .hud-corners { opacity: 0.85; }
+/* cantos ficam rentes ao card, sem o translateZ dos filhos */
+.card3d > .hud-corners { transform: none; }
+
+.hud-meta { display: none; }
+html.futur .hud-meta {
+  display: block;
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  color: var(--text-mute);
+  opacity: 0.65;
+  pointer-events: none;
+}
+.card3d > .hud-meta { transform: none; }
+
+/* ---------- borda viva (filete de luz girando no hover) ---------- */
+@property --bang {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+html.futur .card3d::before,
+html.futur .stack-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: conic-gradient(from var(--bang),
+    transparent 0turn 0.70turn,
+    var(--accent-soft) 0.86turn,
+    transparent 1turn);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+html.futur .card3d:hover::before,
+html.futur .stack-card:hover::before {
+  opacity: 0.9;
+  animation: borderSpin 2.6s linear infinite;
+}
+@keyframes borderSpin { to { --bang: 360deg; } }
+
+/* ---------- linha de varredura ao entrar na seção ---------- */
+.fx-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, var(--accent-soft), transparent);
+  box-shadow: 0 0 14px 0 var(--accent-glow);
+}
+html.futur .fx-scan.go { animation: scanSweep 1.15s cubic-bezier(.4, 0, .2, 1) forwards; }
+@keyframes scanSweep {
+  0%   { top: 0; opacity: 0; }
+  10%  { opacity: 0.5; }
+  85%  { opacity: 0.4; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ---------- cursor próprio (ponto + anel magnético) ---------- */
+html.futur.futur-cursor,
+html.futur.futur-cursor * { cursor: none !important; }
+.cursor-dot, .cursor-ring {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+html.futur.futur-cursor .cursor-dot,
+html.futur.futur-cursor .cursor-ring { display: block; }
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-soft);
+  box-shadow: 0 0 10px 0 var(--accent-glow);
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid color-mix(in srgb, var(--accent-soft) 55%, transparent);
+  transition: width .25s ease, height .25s ease, border-color .25s ease, opacity .25s ease;
+}
+.cursor-ring.hot {
+  width: 56px;
+  height: 56px;
+  border-color: var(--accent-soft);
+}
+.cursor-ring.hidden, .cursor-dot.hidden { opacity: 0; }
+
+/* ---------- terminal vivo no hero ---------- */
+.hero-terminal { display: none; }
+html.futur .hero-terminal {
+  display: block;
+  position: absolute;
+  right: var(--gutter);
+  bottom: 120px;
+  z-index: 2;
+  width: 360px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(14, 14, 17, 0.55);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 14px 18px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+.hero-terminal .th {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--text-mute);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero-terminal .th .tdot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px 0 var(--accent-glow);
+  animation: blipPulse 2.6s infinite ease-in-out;
+}
+.hero-terminal .tlines { min-height: 126px; }
+.hero-terminal .ln { white-space: nowrap; overflow: hidden; }
+.hero-terminal .ln .p { color: var(--accent-soft); }
+.hero-terminal .ln .ok { color: #34d399; }
+.hero-terminal .caret {
+  display: inline-block;
+  width: 7px;
+  height: 12px;
+  margin-left: 2px;
+  vertical-align: -1px;
+  background: var(--accent-soft);
+  animation: caretBlink 1s steps(1) infinite;
+}
+@keyframes caretBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@media (max-width: 1240px) {
+  html.futur .hero-terminal { display: none; }
+}
+
+/* ---------- reduced motion: desliga a camada ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html.futur .fx-scan,
+  html.futur .hero-terminal { display: none !important; }
+}

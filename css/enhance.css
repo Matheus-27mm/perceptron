@@ -1,0 +1,236 @@
+/* ============================================================
+   PERCEPTRON — camada "onde podemos chegar"
+   preloader · lenis · pipeline demo · cases · magnetic · áudio
+   ============================================================ */
+
+/* ---------- Lenis (scroll inercial) ---------- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+/* ---------- Preloader (logo montando) ---------- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  animation: preHide 0.55s ease 1.55s forwards;
+}
+@keyframes preHide { to { opacity: 0; visibility: hidden; } }
+.preloader svg { width: 86px; height: 86px; }
+.preloader .pl-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: plDraw 0.75s cubic-bezier(.6, 0, .2, 1) 0.3s forwards;
+}
+@keyframes plDraw { to { stroke-dashoffset: 0; } }
+.preloader .pl-node { opacity: 0; animation: plNode 0.4s ease forwards; }
+.preloader .pl-node:nth-of-type(1) { animation-delay: 0.05s; }
+.preloader .pl-node:nth-of-type(2) { animation-delay: 0.15s; }
+.preloader .pl-node:nth-of-type(3) { animation-delay: 0.25s; }
+.preloader .pl-node:nth-of-type(4) { animation-delay: 0.6s; }
+@keyframes plNode { to { opacity: 1; } }
+.preloader .pl-name {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  opacity: 0;
+  animation: plName 0.5s ease 0.8s forwards;
+}
+@keyframes plName { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .preloader { display: none; } }
+
+/* ---------- ponto de colapso da galáxia (hero → rede) ---------- */
+.collapse-dot {
+  position: fixed;
+  left: 50%;
+  top: 42%;
+  z-index: 0;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle, #fff, var(--accent-soft) 45%, transparent 70%);
+  box-shadow: 0 0 42px 10px var(--accent-glow);
+}
+
+/* ---------- seções com perspectiva ---------- */
+.pad { perspective: 1300px; }
+
+/* ---------- PIPELINE (a prova) ---------- */
+.pipe-panel {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.018) 40%,
+    rgba(255, 255, 255, 0.04));
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+          backdrop-filter: blur(20px) saturate(160%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 30px 60px -30px rgba(0, 0, 0, 0.6);
+  padding: clamp(22px, 3.5vw, 44px);
+  overflow: hidden;
+}
+.pipe-svg { width: 100%; height: auto; display: block; }
+.pipe-svg .pbox { fill: rgba(255, 255, 255, 0.04); stroke: rgba(255, 255, 255, 0.16); }
+.pipe-svg .ptxt {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  fill: var(--text-dim);
+}
+.pipe-svg .ptxt.b { fill: var(--text); font-weight: 600; }
+.pipe-svg .pline {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 1;
+  stroke-dasharray: 4 5;
+}
+.pipe-svg .pulse { fill: var(--accent-soft); }
+.pipe-svg .core-ring {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1;
+  stroke-dasharray: 5 7;
+  opacity: 0.8;
+  transform-origin: 480px 150px;
+  animation: coreSpin 14s linear infinite;
+}
+.pipe-svg .core-fill {
+  fill: color-mix(in srgb, var(--accent) 14%, rgba(255, 255, 255, 0.03));
+  stroke: color-mix(in srgb, var(--accent-soft) 50%, transparent);
+}
+@keyframes coreSpin { to { transform: rotate(360deg); } }
+
+.pipe-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: clamp(26px, 3vw, 40px);
+  padding-top: clamp(22px, 2.6vw, 32px);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+.pipe-stats .stat .v {
+  font-family: var(--mono);
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 600;
+  color: var(--text);
+}
+.pipe-stats .stat .v .u { color: var(--accent-soft); }
+.pipe-stats .stat .l {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ---------- CASES ---------- */
+.case-big {
+  font-family: var(--mono);
+  font-size: clamp(2.6rem, 4.6vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1;
+  margin-top: 22px;
+}
+.case-big .u { color: var(--accent-soft); }
+.case-sub {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-top: 10px;
+}
+.cases-note {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text-mute);
+  margin-top: 26px;
+  opacity: 0.8;
+}
+
+/* ---------- diagrama do neurônio (manifesto) ---------- */
+.manifesto-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 4vw, 60px);
+  flex-wrap: wrap;
+  margin-top: 44px;
+}
+.manifesto-row .neuron-formula { margin-top: 0; }
+#neuronDiagram { width: min(440px, 100%); height: auto; display: block; }
+#neuronDiagram .nd {
+  fill: none;
+  stroke: color-mix(in srgb, var(--accent-soft) 65%, transparent);
+  stroke-width: 1.2;
+}
+#neuronDiagram .ndn-c { fill: rgba(255, 255, 255, 0.05); stroke: var(--accent-soft); stroke-width: 1.2; }
+#neuronDiagram .ndt {
+  font-family: var(--mono);
+  font-size: 13px;
+  fill: var(--text-dim);
+}
+#neuronDiagram .ndt.acc { fill: var(--accent-soft); }
+/* estado inicial (revelado pelo scroll); sem fx, fica visível */
+html.fx #neuronDiagram .nd { stroke-dasharray: 1; stroke-dashoffset: 1; }
+html.fx #neuronDiagram .ndn { opacity: 0; }
+
+/* ---------- toggle de áudio ---------- */
+.audio-toggle {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 320;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(14, 14, 17, 0.55);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color .25s ease, color .25s ease;
+}
+.audio-toggle:hover { border-color: var(--accent-soft); color: var(--text); }
+.audio-toggle .wave { display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; }
+.audio-toggle .wave i {
+  width: 2px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.audio-toggle.on { color: var(--accent-soft); border-color: color-mix(in srgb, var(--accent-soft) 55%, transparent); }
+.audio-toggle.on .wave i { animation: waveBar 0.9s ease-in-out infinite alternate; }
+.audio-toggle.on .wave i:nth-child(2) { animation-delay: 0.15s; }
+.audio-toggle.on .wave i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes waveBar { from { height: 4px; } to { height: 12px; } }
+
+/* ---------- responsivo ---------- */
+@media (max-width: 920px) {
+  .pipe-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .audio-toggle .albl { display: none; }
+}
