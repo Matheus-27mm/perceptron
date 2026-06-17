@@ -124,15 +124,15 @@
   var termHost = document.getElementById('termLines');
   if (termHost && !reduced) {
     var SCRIPT = [
-      { p: true,  t: 'perceptron deploy --prod' },
-      { ok: true, t: 'build #142 concluído · 3.2s' },
-      { ok: true, t: '28 jobs processados · fila 0' },
-      { ok: true, t: 'uptime 99.98% · p95 41ms' },
-      { p: true,  t: 'celery beat --schedule sync' },
-      { ok: true, t: '4 integrações sincronizadas' },
-      { ok: true, t: 'dados validados · 0 erros' },
-      { p: true,  t: 'pytest -q' },
-      { ok: true, t: '312 passed · cobertura 94%' }
+      { p: true,  t: 'perceptron · iniciar operação' },
+      { ok: true, t: 'sistema no ar · pronto em 3.2s' },
+      { ok: true, t: '28 tarefas processadas · fila zerada' },
+      { ok: true, t: 'disponibilidade 99.98%' },
+      { p: true,  t: 'sincronizar integrações' },
+      { ok: true, t: '4 sistemas conectados' },
+      { ok: true, t: 'dados conferidos · 0 erros' },
+      { p: true,  t: 'verificar tudo' },
+      { ok: true, t: 'tudo funcionando · sem falhas' }
     ];
     var MAXL = 6, idx = 0, charI = 0, lineEl = null, caret = null;
 

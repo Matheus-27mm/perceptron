@@ -1,0 +1,61 @@
+/* ============ Botão flutuante de WhatsApp ============ */
+.wa-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 70;
+  display: inline-flex;
+  align-items: center;
+  height: 56px;
+  width: 56px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #07261a;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.38), 0 0 0 6px rgba(37, 211, 102, 0.14);
+  transition: width 0.28s ease, background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.wa-fab svg {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.wa-fab .wa-label {
+  white-space: nowrap;
+  font: 600 14px/1 "IBM Plex Sans", system-ui, sans-serif;
+  opacity: 0;
+  transform: translateX(-6px);
+  padding-right: 18px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) {
+  .wa-fab:hover {
+    width: 215px;
+    background: #1ebe5a;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.42), 0 0 0 6px rgba(37, 211, 102, 0.2);
+  }
+  .wa-fab:hover .wa-label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.wa-fab:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 640px) {
+  .wa-fab { right: 14px; bottom: 14px; height: 52px; width: 52px; }
+  .wa-fab svg { flex-basis: 52px; width: 52px; height: 52px; padding: 14px; }
+}
+
+/* respeita quem pediu menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab { transition: background 0.2s ease; }
+}
