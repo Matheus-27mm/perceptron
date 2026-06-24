@@ -10,7 +10,7 @@
   if (!host) return;
 
   var body = host.querySelector('.bt-body');
-  var MAIL = 'contato@perceptron.py';
+  var MAIL = 'contact@perceptronenterprise.com';
 
   var QUESTIONS = [
     { k: 'nome',    q: 'qual é o seu nome?' },
