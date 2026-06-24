@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="css/enhance.css" />
 <link rel="stylesheet" href="css/interactive.css" />
 <link rel="stylesheet" href="css/whatsapp.css" />
+<link rel="stylesheet" href="css/nav-glass.css" />
 <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9/build/spline-viewer.js"></script>
 <script>
   // habilita os estados de entrada apenas quando JS existe e sem reduced-motion
@@ -63,15 +64,20 @@
       </svg>
       <span>Perceptron<span class="py">.py</span></span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links glass-pill" aria-label="Seções">
       <a href="#pilares">O que fazemos</a>
       <a href="#manifesto">Quem somos</a>
       <a href="#prova">Como funciona</a>
       <a href="#stack">Soluções</a>
       <a href="#cases">Casos</a>
+      <button type="button" class="kbd-hint" id="paletteHint" aria-label="Abrir paleta de comandos"><span>⌘</span>K</button>
     </nav>
     <div class="nav-cta">
-      <button type="button" class="kbd-hint" id="paletteHint" aria-label="Abrir paleta de comandos"><span>⌘</span>K</button>
+      <div class="lang-switch glass-pill" role="group" aria-label="Idioma / Language / Idioma">
+        <button type="button" class="lang-opt is-active" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" class="lang-opt" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang-opt" data-lang="es" aria-pressed="false">ES</button>
+      </div>
       <a href="#contato" class="btn btn-ghost btn-text">Falar com a equipe</a>
       <a href="#contato" class="btn btn-primary">Iniciar projeto</a>
     </div>
@@ -540,6 +546,9 @@
 <script src="js/enhance-fx.js"></script>
 <script src="js/briefing-terminal.js"></script>
 <script src="js/command-palette.js"></script>
+
+<!-- i18n — tradução PT / EN / ES da página toda, sem depender do navegador -->
+<script src="js/i18n.js"></script>
 
 <!-- analytics (Vercel Web Analytics — lembre de ativar em Analytics no painel do Vercel) -->
 <script defer src="/_vercel/insights/script.js"></script>
