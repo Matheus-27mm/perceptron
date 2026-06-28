@@ -1,9 +1,22 @@
 /* ============================================================
-   RESPONSIVO — ajustes finos de tablet / celular
+   RESPONSIVO — anti-overflow + ajustes de celular
    (carrega por último; sobrescreve só o necessário)
    ============================================================ */
 
-html, body { overflow-x: hidden; }   /* sem rolagem horizontal acidental */
+/* 1) MATA o overflow horizontal — que no mobile "estica" o viewport
+      e quebra todas as media queries */
+html { overflow-x: clip; }
+body { overflow-x: clip; }
+
+/* itens de grid/flex precisam poder encolher, senão empurram a largura */
+.hero-grid > *, .hero-copy, .hero-visual { min-width: 0; }
+
+/* títulos/textos longos quebram em vez de empurrar a largura */
+h1.hero-title, .hero-sub, .sec-head h2, .sec-head .sec-sub { overflow-wrap: break-word; }
+
+/* elementos que podem vazar ficam contidos */
+.hero-visual, .ai-orb, .logos-marquee { max-width: 100%; }
+.logos-marquee { overflow: hidden; }
 
 /* ---------------- NAV ---------------- */
 @media (max-width: 860px) {
@@ -18,35 +31,32 @@ html, body { overflow-x: hidden; }   /* sem rolagem horizontal acidental */
 }
 
 /* ---------------- HERO ---------------- */
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; }   /* reforço do empilhamento */
+  .hero-visual { overflow: hidden; }           /* a orb não vaza pros lados */
+}
 @media (max-width: 560px) {
   .hero { padding-top: 58px; }
-  h1.hero-title { font-size: clamp(1.95rem, 8.4vw, 2.5rem); line-height: 1.12; }
-  .hero-sub { font-size: 0.96rem; }
+  h1.hero-title { font-size: clamp(1.9rem, 8vw, 2.4rem); line-height: 1.14; }
+  .hero-sub { font-size: 0.95rem; }
   .status-pill { font-size: 9.5px; padding: 5px 11px; }
 }
 @media (max-width: 480px) {
   .hero-actions { width: 100%; }
-  .hero-actions .btn { width: 100%; justify-content: center; }  /* CTAs full-width empilhados */
+  .hero-actions .btn { width: 100%; justify-content: center; }  /* CTAs full-width */
 }
 
 /* ---------------- AI ORB ---------------- */
 @media (max-width: 560px) {
   .ai-orb { height: 300px; }
-  .ai-node .ai-lbl { display: none; }     /* só os ícones orbitando — menos poluído */
+  .ai-node .ai-lbl { display: none; }     /* só os ícones — menos poluído */
   .orb-caption { font-size: 12px; padding: 11px 14px; max-width: 100%; }
 }
-@media (max-width: 400px) {
-  .ai-orb { transform: scale(0.9); transform-origin: center top; }
-}
 
-/* ---------------- SEÇÕES / CARDS ---------------- */
+/* ---------------- CARDS ---------------- */
 @media (max-width: 480px) {
   .why-card { padding: 24px 22px; }
   .why-banner { padding: 26px 22px; }
   .why-stat { min-width: 100%; max-width: none; }
-}
-
-/* ---------------- CARROSSEL DE SISTEMAS ---------------- */
-@media (max-width: 560px) {
   .carousel-card-body h3 { font-size: 1rem; }
 }
