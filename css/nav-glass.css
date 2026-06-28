@@ -74,7 +74,7 @@
 
 /* ações à direita com respiro */
 .nav-cta { gap: 12px; }
-.nav-cta .btn { border-radius: 999px; padding: 11px 22px; }
+.nav-cta .btn { border-radius: var(--radius-md); padding: 11px 22px; }
 
 /* ---- seletor de idioma (segmentado, vidro) ---- */
 .lang-switch {

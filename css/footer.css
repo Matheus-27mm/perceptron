@@ -1,0 +1,54 @@
+/* ============================================================
+   FOOTER — marca + descrição · colunas · redes · crédito
+   ============================================================ */
+.foot { padding: 64px 0 44px; border-top: 1px solid var(--line-soft); margin-top: 40px; }
+.foot .foot-rule { height: 1px; background: var(--line); margin: 34px 0; }
+
+/* intro */
+.foot-intro { display: flex; gap: 26px; align-items: flex-start; }
+.foot-intro .foot-mark { flex-shrink: 0; display: block; }
+.foot-intro .foot-mark svg { width: 34px; height: 34px; display: block; }
+.foot-desc { color: var(--text-dim); font-size: 0.92rem; line-height: 1.7; max-width: 940px; }
+
+/* colunas */
+.foot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.foot-col h4 {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-mute); margin-bottom: 14px;
+}
+.foot-col a {
+  display: block; color: var(--text-dim); font-size: 0.92rem; padding: 6px 0;
+  transition: color 0.2s ease;
+}
+.foot-col a:hover { color: #fff; }
+
+/* redes (só e-mail + instagram) */
+.foot-social-row { display: flex; justify-content: center; gap: 14px; }
+.fsoc {
+  width: 42px; height: 42px; border-radius: 11px;
+  display: grid; place-items: center;
+  color: var(--text-dim); border: 1px solid var(--line); background: var(--surface);
+  transition: color 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+}
+.fsoc:hover {
+  color: #fff;
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+  transform: translateY(-2px);
+}
+.fsoc svg { width: 19px; height: 19px; }
+
+/* crédito */
+.foot-credit {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px; color: var(--text-mute); font-size: 0.82rem;
+}
+.foot-credit .heart { color: var(--accent-soft); }
+
+@media (max-width: 760px) {
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 26px; }
+  .foot-intro { flex-direction: column; gap: 16px; }
+  .foot-credit { justify-content: center; text-align: center; }
+}
+@media (max-width: 420px) {
+  .foot-grid { grid-template-columns: 1fr; }
+}

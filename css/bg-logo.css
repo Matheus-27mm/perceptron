@@ -1,0 +1,27 @@
+/* ============================================================
+   MARCA D'ÁGUA DE FUNDO — logo gigante, fixa e sutil
+   (efeito de profundidade; o conteúdo rola por cima)
+   ============================================================ */
+.bg-logo {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../assets/logo-mark.svg");
+  background-repeat: no-repeat;
+  background-position: center 44%;
+  background-size: min(80vmin, 860px);
+  opacity: 0.05;            /* sutil — profundidade sem chamar atenção */
+  filter: blur(3px);        /* mais borrado = "atmosfera", não logo nítida */
+}
+
+/* conteúdo acima da marca d'água (a nav já tem z-index próprio) */
+main, footer.foot { position: relative; z-index: 1; }
+
+@media (max-width: 700px) {
+  .bg-logo { background-size: 130vw; opacity: 0.045; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-logo { /* fixa, sem animação — nada a fazer */ }
+}

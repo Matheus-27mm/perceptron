@@ -82,7 +82,7 @@
   }
 
   /* ---------- cursor próprio (ponto + anel) ---------- */
-  if (finePointer && !reduced) {
+  if (false) {
     docEl.classList.add('futur-cursor');
     var dot = document.createElement('div');
     dot.className = 'cursor-dot hidden';

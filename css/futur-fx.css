@@ -28,7 +28,7 @@ html.futur .hud-corners {
 .hud-corners::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
 .hud-corners::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
 html.futur .card3d:hover .hud-corners,
-html.futur .stack-card:hover .hud-corners { opacity: 0.85; }
+html.futur .stack-card:hover .hud-corners { opacity: 0.6; }
 /* cantos ficam rentes ao card, sem o translateZ dos filhos */
 .card3d > .hud-corners { transform: none; }
 
@@ -100,9 +100,9 @@ html.futur .fx-scan.go { animation: scanSweep 1.15s cubic-bezier(.4, 0, .2, 1) f
   100% { top: 100%; opacity: 0; }
 }
 
-/* ---------- cursor próprio (ponto + anel magnético) ---------- */
-html.futur.futur-cursor,
-html.futur.futur-cursor * { cursor: none !important; }
+/* ---------- cursor próprio (ponto + anel) ---------- */
+/* html.futur.futur-cursor,
+html.futur.futur-cursor * { cursor: none !important; } */
 .cursor-dot, .cursor-ring {
   display: none;
   position: fixed;
