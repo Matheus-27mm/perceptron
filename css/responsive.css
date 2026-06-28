@@ -1,0 +1,52 @@
+/* ============================================================
+   RESPONSIVO — ajustes finos de tablet / celular
+   (carrega por último; sobrescreve só o necessário)
+   ============================================================ */
+
+html, body { overflow-x: hidden; }   /* sem rolagem horizontal acidental */
+
+/* ---------------- NAV ---------------- */
+@media (max-width: 860px) {
+  .nav-links { display: none; }       /* links somem; seções acessíveis pelo scroll */
+  .nav-inner { height: 62px; }
+}
+@media (max-width: 520px) {
+  .nav-cta .btn-ghost { display: none; }   /* mantém só "Iniciar projeto" */
+  .nav-cta .btn { padding: 9px 15px; font-size: 12.5px; }
+  .brand span { font-size: 14px; }
+  .brand .logo-icon { width: 20px; height: 20px; }
+}
+
+/* ---------------- HERO ---------------- */
+@media (max-width: 560px) {
+  .hero { padding-top: 58px; }
+  h1.hero-title { font-size: clamp(1.95rem, 8.4vw, 2.5rem); line-height: 1.12; }
+  .hero-sub { font-size: 0.96rem; }
+  .status-pill { font-size: 9.5px; padding: 5px 11px; }
+}
+@media (max-width: 480px) {
+  .hero-actions { width: 100%; }
+  .hero-actions .btn { width: 100%; justify-content: center; }  /* CTAs full-width empilhados */
+}
+
+/* ---------------- AI ORB ---------------- */
+@media (max-width: 560px) {
+  .ai-orb { height: 300px; }
+  .ai-node .ai-lbl { display: none; }     /* só os ícones orbitando — menos poluído */
+  .orb-caption { font-size: 12px; padding: 11px 14px; max-width: 100%; }
+}
+@media (max-width: 400px) {
+  .ai-orb { transform: scale(0.9); transform-origin: center top; }
+}
+
+/* ---------------- SEÇÕES / CARDS ---------------- */
+@media (max-width: 480px) {
+  .why-card { padding: 24px 22px; }
+  .why-banner { padding: 26px 22px; }
+  .why-stat { min-width: 100%; max-width: none; }
+}
+
+/* ---------------- CARROSSEL DE SISTEMAS ---------------- */
+@media (max-width: 560px) {
+  .carousel-card-body h3 { font-size: 1rem; }
+}
