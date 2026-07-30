@@ -1,0 +1,107 @@
+/* ============================================================
+   PÁGINAS LEGAIS — reutiliza os tokens da landing-v2
+   ============================================================ */
+
+.legal-nav {
+  border-bottom: 1px solid var(--line-soft);
+  background: rgba(8, 8, 8, 0.65);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.legal-nav .nav-inner { height: 74px; }
+@media (max-width: 860px) {
+  .legal-nav .nav-inner { height: 62px; }
+}
+
+.legal-back {
+  font-size: 13.5px;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.2s ease;
+}
+.legal-back:hover { color: var(--text); }
+
+.legal {
+  padding-block: clamp(56px, 8vw, 96px) clamp(64px, 9vw, 110px);
+}
+.legal .wrap { max-width: 780px; }
+
+.legal .tagline {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--accent-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.legal h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-top: 12px;
+  color: #fff;
+}
+
+.legal .legal-updated {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text-mute);
+  margin-top: 16px;
+}
+
+.legal h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 44px;
+  letter-spacing: -0.01em;
+}
+
+.legal h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 26px;
+}
+
+.legal p,
+.legal li {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  margin-top: 14px;
+}
+
+.legal ul {
+  margin-top: 6px;
+  padding-left: 20px;
+}
+.legal li { margin-top: 8px; }
+.legal li::marker { color: var(--text-mute); }
+
+.legal a { color: var(--accent-soft); }
+.legal a:hover { text-decoration: underline; }
+
+.legal strong { color: var(--text); font-weight: 600; }
+
+.legal-rule {
+  height: 1px;
+  background: var(--line-soft);
+  margin-top: 48px;
+}
+
+.legal-contact {
+  margin-top: 40px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+}
+.legal-contact h2 { margin-top: 0; }

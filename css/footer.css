@@ -44,6 +44,11 @@
 }
 .foot-credit .heart { color: var(--accent-soft); }
 
+.foot-legal { margin-top: 12px; }
+.foot-legal a { color: var(--text-mute); transition: color 0.2s ease; }
+.foot-legal a:hover { color: var(--text-dim); }
+.foot-legal a + a { margin-left: 18px; }
+
 @media (max-width: 760px) {
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 26px; }
   .foot-intro { flex-direction: column; gap: 16px; }

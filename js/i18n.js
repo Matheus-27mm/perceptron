@@ -116,6 +116,9 @@
       'Engenharia de dados': 'Data engineering',
       'E-mail': 'Email',
       '© 2026 Perceptron · Todos os direitos reservados.': '© 2026 Perceptron · All rights reserved.',
+      'Manaus, Amazonas, Brasil': 'Manaus, Amazonas, Brazil',
+      'Política de Privacidade': 'Privacy Policy',
+      'Termos de Serviço': 'Terms of Service',
       'Engenharia de software sob medida': 'Custom software engineering'
     }
   };
