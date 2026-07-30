@@ -49,8 +49,6 @@ h1.hero-title, .hero-sub, .sec-head h2, .sec-head .sec-sub { overflow-wrap: brea
 /* ---------------- AI ORB ---------------- */
 @media (max-width: 560px) {
   .ai-orb { height: 300px; }
-  .ai-node .ai-lbl { display: none; }     /* só os ícones — menos poluído */
-  .orb-caption { font-size: 12px; padding: 11px 14px; max-width: 100%; }
 }
 
 /* ---------------- CARDS ---------------- */

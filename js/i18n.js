@@ -27,8 +27,6 @@
       'Iniciar Diagnóstico Técnico': 'Start a Technical Diagnosis',
       'Ver soluções': 'See solutions',
       'Empresas que já transformaram suas operações conosco': 'Companies that have already transformed their operations with us',
-      'IAs trabalhando juntas para entregar': 'AIs working together to deliver',
-      'inteligência, velocidade e precisão.': 'intelligence, speed and precision.',
       'scroll': 'scroll',
       /* o que fazemos */
       'Engenharia que remove complexidade e cria escala.': 'Engineering that removes complexity and creates scale.',
@@ -94,7 +92,20 @@
       'Diagnóstico técnico gratuito': 'Free technical diagnosis',
       'Proposta personalizada': 'Personalized proposal',
       'Sem compromisso': 'No commitment',
-      'Falar com um especialista': 'Talk to a specialist',
+      /* formulário */
+      'Nome': 'Name',
+      'O que você precisa resolver?': 'What do you need to solve?',
+      'Não preencha este campo': 'Do not fill in this field',
+      'Informe seu nome.': 'Enter your name.',
+      'Informe o nome da empresa.': 'Enter your company name.',
+      'Informe um WhatsApp válido com DDD.': 'Enter a valid WhatsApp number with area code.',
+      'Informe um e-mail válido.': 'Enter a valid email address.',
+      'Descreva em uma frase o que você precisa resolver.': 'Describe in one sentence what you need to solve.',
+      'Enviar mensagem': 'Send message',
+      'Enviando…': 'Sending…',
+      'Mensagem recebida. Retornamos em até um dia útil.': "Message received. We'll get back to you within one business day.",
+      'Não foi possível enviar agora. Escreva para': "We couldn't send it right now. Please write to",
+      'Falar no WhatsApp': 'Chat on WhatsApp',
       /* rodapé */
       'A Perceptron é uma empresa de engenharia de software que transforma operações complexas em sistemas inteligentes, robustos e escaláveis. Desenvolvemos software sob medida, automações inteligentes e infraestrutura digital para empresas que querem crescer com eficiência. Nosso objetivo é eliminar gargalos operacionais, integrar processos e criar tecnologia que sustente o crescimento do negócio no longo prazo.': 'Perceptron is a software engineering company that transforms complex operations into intelligent, robust and scalable systems. We build custom software, intelligent automations and digital infrastructure for companies that want to grow efficiently. Our goal is to eliminate operational bottlenecks, integrate processes and create technology that sustains business growth over the long term.',
       'Empresa': 'Company',
@@ -123,8 +134,6 @@
       'Iniciar Diagnóstico Técnico': 'Iniciar Diagnóstico Técnico',
       'Ver soluções': 'Ver soluciones',
       'Empresas que já transformaram suas operações conosco': 'Empresas que ya transformaron sus operaciones con nosotros',
-      'IAs trabalhando juntas para entregar': 'IAs trabajando juntas para entregar',
-      'inteligência, velocidade e precisão.': 'inteligencia, velocidad y precisión.',
       'scroll': 'desliza',
       'Engenharia que remove complexidade e cria escala.': 'Ingeniería que elimina la complejidad y crea escala.',
       'Sistemas Sob Medida': 'Sistemas a Medida',
@@ -213,8 +222,6 @@
       'Iniciar Diagnóstico Técnico': 'Démarrer le Diagnostic Technique',
       'Ver soluções': 'Voir les solutions',
       'Empresas que já transformaram suas operações conosco': 'Des entreprises qui ont déjà transformé leurs opérations avec nous',
-      'IAs trabalhando juntas para entregar': 'Des IA travaillant ensemble pour offrir',
-      'inteligência, velocidade e precisão.': 'intelligence, vitesse et précision.',
       'scroll': 'défiler',
       'Engenharia que remove complexidade e cria escala.': "Une ingénierie qui supprime la complexité et crée de l'échelle.",
       'Sistemas Sob Medida': 'Systèmes Sur Mesure',
@@ -305,7 +312,13 @@
       }
     });
     var n;
-    while ((n = w.nextNode())) { n.__orig = n.nodeValue; n.__key = norm(n.nodeValue); nodes.push(n); }
+    while ((n = w.nextNode())) {
+      n.__orig = n.nodeValue;
+      n.__key = norm(n.nodeValue);
+      n.__lead = n.nodeValue.match(/^\s*/)[0];
+      n.__trail = n.nodeValue.match(/\s*$/)[0];
+      nodes.push(n);
+    }
   }
 
   function apply(lang) {
@@ -313,7 +326,7 @@
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
       if (lang === 'pt' || !map) { n.nodeValue = n.__orig; }
-      else { var t = map[n.__key]; n.nodeValue = (t != null) ? t : n.__orig; }
+      else { var t = map[n.__key]; n.nodeValue = (t != null) ? n.__lead + t + n.__trail : n.__orig; }
     }
     document.documentElement.setAttribute('lang', HTML_LANG[lang] || 'pt-BR');
     var cur = document.getElementById('langCurrent');

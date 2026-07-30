@@ -1,0 +1,156 @@
+/* ============================================================
+   FORMULÁRIO DE CONTATO — usa os tokens da landing-v2
+   ============================================================ */
+
+.cform {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cform-hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.cform-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 560px) {
+  .cform-row { grid-template-columns: 1fr; }
+}
+
+.cform-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.cform-field label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-mute);
+  transition: color 0.2s ease;
+}
+
+.cform-field input,
+.cform-field textarea {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 11px 13px;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cform-field textarea {
+  resize: vertical;
+  min-height: 92px;
+}
+
+.cform-field input:hover,
+.cform-field textarea:hover { border-color: var(--text-mute); }
+
+.cform-field input:focus,
+.cform-field textarea:focus {
+  outline: none;
+  border-color: var(--accent-soft);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.cform-field input:-webkit-autofill,
+.cform-field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text);
+  -webkit-box-shadow: 0 0 0 40px #101014 inset;
+  caret-color: var(--text);
+}
+
+.cform-err {
+  display: none;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #f87171;
+}
+
+.cform-field.is-invalid label { color: #f87171; }
+.cform-field.is-invalid input,
+.cform-field.is-invalid textarea { border-color: rgba(248, 113, 113, 0.55); }
+.cform-field.is-invalid .cform-err { display: block; }
+
+.cform-submit {
+  width: 100%;
+  justify-content: center;
+  padding-block: 13px;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.cform-submit .cform-t-busy { display: none; }
+.cform-submit[data-state="busy"] { cursor: progress; opacity: 0.8; }
+.cform-submit[data-state="busy"] .cform-t-idle { display: none; }
+.cform-submit[data-state="busy"] .cform-t-busy { display: inline; }
+.cform-submit[data-state="busy"] svg { display: none; }
+.cform-submit[data-state="busy"]:hover {
+  background: var(--accent);
+  transform: none;
+  box-shadow: none;
+}
+
+.cform-spin {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  display: none;
+  animation: cformSpin 0.7s linear infinite;
+}
+.cform-submit[data-state="busy"] .cform-spin { display: block; }
+@keyframes cformSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .cform-spin { animation-duration: 2s; }
+}
+
+.cform-status {
+  display: none;
+  font-size: 13px;
+  line-height: 1.55;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+}
+.cform-status a { color: inherit; text-decoration: underline; }
+
+.cform[data-result="ok"] .cform-ok {
+  display: block;
+  color: #6ee7b7;
+  border-color: rgba(52, 211, 153, 0.35);
+  background: rgba(52, 211, 153, 0.07);
+}
+.cform[data-result="fail"] .cform-fail {
+  display: block;
+  color: #fca5a5;
+  border-color: rgba(248, 113, 113, 0.35);
+  background: rgba(248, 113, 113, 0.07);
+}
+.cform[data-result="ok"] .cform-row,
+.cform[data-result="ok"] .cform-field,
+.cform[data-result="ok"] .cform-submit { display: none; }
