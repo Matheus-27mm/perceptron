@@ -96,7 +96,7 @@
       'Sem compromisso': 'No commitment',
       'Falar com um especialista': 'Talk to a specialist',
       /* rodapé */
-      'A Perceptron.py é uma empresa de engenharia de software que transforma operações complexas em sistemas inteligentes, robustos e escaláveis. Desenvolvemos software sob medida, automações inteligentes e infraestrutura digital para empresas que querem crescer com eficiência. Nosso objetivo é eliminar gargalos operacionais, integrar processos e criar tecnologia que sustente o crescimento do negócio no longo prazo.': 'Perceptron.py is a software engineering company that transforms complex operations into intelligent, robust and scalable systems. We build custom software, intelligent automations and digital infrastructure for companies that want to grow efficiently. Our goal is to eliminate operational bottlenecks, integrate processes and create technology that sustains business growth over the long term.',
+      'A Perceptron é uma empresa de engenharia de software que transforma operações complexas em sistemas inteligentes, robustos e escaláveis. Desenvolvemos software sob medida, automações inteligentes e infraestrutura digital para empresas que querem crescer com eficiência. Nosso objetivo é eliminar gargalos operacionais, integrar processos e criar tecnologia que sustente o crescimento do negócio no longo prazo.': 'Perceptron is a software engineering company that transforms complex operations into intelligent, robust and scalable systems. We build custom software, intelligent automations and digital infrastructure for companies that want to grow efficiently. Our goal is to eliminate operational bottlenecks, integrate processes and create technology that sustains business growth over the long term.',
       'Empresa': 'Company',
       'Recursos': 'Resources',
       'Contato': 'Contact',
@@ -104,7 +104,7 @@
       'Automação operacional': 'Operational automation',
       'Engenharia de dados': 'Data engineering',
       'E-mail': 'Email',
-      '© 2026 Perceptron.py · Todos os direitos reservados.': '© 2026 Perceptron.py · All rights reserved.',
+      '© 2026 Perceptron · Todos os direitos reservados.': '© 2026 Perceptron · All rights reserved.',
       'Engenharia de software sob medida': 'Custom software engineering'
     },
 
@@ -186,7 +186,7 @@
       'Proposta personalizada': 'Propuesta personalizada',
       'Sem compromisso': 'Sin compromiso',
       'Falar com um especialista': 'Hablar con un especialista',
-      'A Perceptron.py é uma empresa de engenharia de software que transforma operações complexas em sistemas inteligentes, robustos e escaláveis. Desenvolvemos software sob medida, automações inteligentes e infraestrutura digital para empresas que querem crescer com eficiência. Nosso objetivo é eliminar gargalos operacionais, integrar processos e criar tecnologia que sustente o crescimento do negócio no longo prazo.': 'Perceptron.py es una empresa de ingeniería de software que transforma operaciones complejas en sistemas inteligentes, robustos y escalables. Desarrollamos software a medida, automatizaciones inteligentes e infraestructura digital para empresas que quieren crecer con eficiencia. Nuestro objetivo es eliminar cuellos de botella operativos, integrar procesos y crear tecnología que sostenga el crecimiento del negocio a largo plazo.',
+      'A Perceptron é uma empresa de engenharia de software que transforma operações complexas em sistemas inteligentes, robustos e escaláveis. Desenvolvemos software sob medida, automações inteligentes e infraestrutura digital para empresas que querem crescer com eficiência. Nosso objetivo é eliminar gargalos operacionais, integrar processos e criar tecnologia que sustente o crescimento do negócio no longo prazo.': 'Perceptron es una empresa de ingeniería de software que transforma operaciones complejas en sistemas inteligentes, robustos y escalables. Desarrollamos software a medida, automatizaciones inteligentes e infraestructura digital para empresas que quieren crecer con eficiencia. Nuestro objetivo es eliminar cuellos de botella operativos, integrar procesos y crear tecnología que sostenga el crecimiento del negocio a largo plazo.',
       'Empresa': 'Empresa',
       'Recursos': 'Recursos',
       'Contato': 'Contacto',
@@ -194,7 +194,7 @@
       'Automação operacional': 'Automatización operativa',
       'Engenharia de dados': 'Ingeniería de datos',
       'E-mail': 'Correo',
-      '© 2026 Perceptron.py · Todos os direitos reservados.': '© 2026 Perceptron.py · Todos los derechos reservados.',
+      '© 2026 Perceptron · Todos os direitos reservados.': '© 2026 Perceptron · Todos los derechos reservados.',
       'Engenharia de software sob medida': 'Ingeniería de software a medida'
     },
 
@@ -276,7 +276,7 @@
       'Proposta personalizada': 'Proposition personnalisée',
       'Sem compromisso': 'Sans engagement',
       'Falar com um especialista': 'Parler à un spécialiste',
-      'A Perceptron.py é uma empresa de engenharia de software que transforma operações complexas em sistemas inteligentes, robustos e escaláveis. Desenvolvemos software sob medida, automações inteligentes e infraestrutura digital para empresas que querem crescer com eficiência. Nosso objetivo é eliminar gargalos operacionais, integrar processos e criar tecnologia que sustente o crescimento do negócio no longo prazo.': "Perceptron.py est une entreprise de génie logiciel qui transforme des opérations complexes en systèmes intelligents, robustes et évolutifs. Nous développons des logiciels sur mesure, des automatisations intelligentes et des infrastructures numériques pour les entreprises qui veulent croître efficacement. Notre objectif est d'éliminer les goulots d'étranglement opérationnels, d'intégrer les processus et de créer une technologie qui soutient la croissance de l'entreprise sur le long terme.",
+      'A Perceptron é uma empresa de engenharia de software que transforma operações complexas em sistemas inteligentes, robustos e escaláveis. Desenvolvemos software sob medida, automações inteligentes e infraestrutura digital para empresas que querem crescer com eficiência. Nosso objetivo é eliminar gargalos operacionais, integrar processos e criar tecnologia que sustente o crescimento do negócio no longo prazo.': "Perceptron est une entreprise de génie logiciel qui transforme des opérations complexes en systèmes intelligents, robustes et évolutifs. Nous développons des logiciels sur mesure, des automatisations intelligentes et des infrastructures numériques pour les entreprises qui veulent croître efficacement. Notre objectif est d'éliminer les goulots d'étranglement opérationnels, d'intégrer les processus et de créer une technologie qui soutient la croissance de l'entreprise sur le long terme.",
       'Empresa': 'Entreprise',
       'Recursos': 'Ressources',
       'Contato': 'Contact',
@@ -284,7 +284,7 @@
       'Automação operacional': 'Automatisation opérationnelle',
       'Engenharia de dados': 'Ingénierie des données',
       'E-mail': 'E-mail',
-      '© 2026 Perceptron.py · Todos os direitos reservados.': '© 2026 Perceptron.py · Tous droits réservés.',
+      '© 2026 Perceptron · Todos os direitos reservados.': '© 2026 Perceptron · Tous droits réservés.',
       'Engenharia de software sob medida': 'Génie logiciel sur mesure'
     }
   };

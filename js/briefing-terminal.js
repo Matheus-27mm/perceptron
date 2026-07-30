@@ -87,7 +87,7 @@
 
   function briefingText() {
     return [
-      'BRIEFING — Perceptron.py',
+      'BRIEFING — Perceptron',
       '------------------------',
       'nome:     ' + (answers.nome || '—'),
       'empresa:  ' + (answers.empresa || '—'),
