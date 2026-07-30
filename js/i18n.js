@@ -41,14 +41,13 @@
       /* software em produção */
       'Sistemas desenvolvidos': "Systems we've built",
       'Software em produção. Resultados reais.': 'Software in production. Real results.',
+      'Em produção': 'In production',
+      'Em desenvolvimento': 'In development',
       'Sistema jurídico completo — processos, prazos, clientes e assistente jurídico com IA.': 'Complete legal system — cases, deadlines, clients and an AI legal assistant.',
-      'Centralizou o contencioso e automatizou o controle de prazos críticos.': 'Centralized litigation and automated control of critical deadlines.',
       'Rastreabilidade agrícola e conformidade EUDR — compliance, Score ESG e due diligence de fazendas.': 'Agricultural traceability and EUDR compliance — compliance, ESG Score and farm due diligence.',
-      'Unificou a conformidade ambiental e o monitoramento de alertas em tempo real.': 'Unified environmental compliance and real-time alert monitoring.',
       'Gestão para clínicas de estética — CRM, agenda, financeiro e central de WhatsApp em um só lugar.': 'Management for aesthetic clinics — CRM, scheduling, finance and a WhatsApp hub in one place.',
       'Unificou agendamento, vendas e relacionamento com o paciente.': 'Unified scheduling, sales and patient relationships.',
       'CRM sob medida para o comercial — pipeline, negócios, financeiro e relatórios em tempo real.': 'Custom CRM for sales — pipeline, deals, finance and real-time reports.',
-      'Deu visibilidade total do funil de vendas e do desempenho financeiro.': 'Gave full visibility of the sales funnel and financial performance.',
       'Quer ver mais detalhes de algum projeto?': 'Want to see more details on a project?',
       'Fale com a nossa equipe →': 'Talk to our team →',
       /* como funciona */
