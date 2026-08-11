@@ -42,6 +42,22 @@
   min-height: 280px;
   border-bottom: none;
   border-right: 1px solid var(--line);
+  padding: 26px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(124, 58, 237, 0.09), transparent 62%),
+    var(--bg-dark);
+}
+.case-featured .video-container img.shot {
+  object-fit: contain;
+  padding: 0;
+  opacity: 0.72;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+}
+.case-featured:hover .video-container img.shot {
+  transform: none;
+  opacity: 0.82;
 }
 .case-featured .carousel-card-body {
   padding: 34px 32px;
@@ -55,6 +71,7 @@
   .case-featured .video-container {
     aspect-ratio: 16/9;
     min-height: 0;
+    padding: 16px;
     border-right: none;
     border-bottom: 1px solid var(--line);
   }

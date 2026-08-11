@@ -181,6 +181,13 @@ h1.hero-title .hl {
   margin-top: 36px;
   flex-wrap: wrap;
 }
+.hero-action-note {
+  margin-top: 12px;
+  color: var(--text-mute);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+}
 @media (max-width: 960px) {
   .hero-actions { justify-content: center; }
 }
@@ -192,7 +199,7 @@ h1.hero-title .hl {
 }
 .hero-logos p {
   font-family: var(--mono); font-size: 10.5px; text-transform: uppercase;
-  letter-spacing: 0.06em; color: var(--text-mute); margin-bottom: 14px;
+  letter-spacing: 0.06em; color: #71717a; margin-bottom: 14px;
 }
 .logos-marquee {
   position: relative;
@@ -221,13 +228,13 @@ h1.hero-title .hl {
 }
 .logo-item {
   font-family: var(--mono); font-size: 13.5px; font-weight: 700;
-  color: var(--text-mute); letter-spacing: 0.05em;
+  color: #686872; letter-spacing: 0.05em;
   display: inline-flex; align-items: center; gap: 6px;
   margin-right: 44px; white-space: nowrap;
   transition: color 0.25s ease;
 }
 .logos-marquee:hover .logo-item { color: var(--text-dim); }
-.logo-item svg { opacity: 0.5; }
+.logo-item svg { opacity: 0.72; }
 
 /* Coluna Direita (Canvas + Grafo Overlays) */
 .hero-visual {

@@ -23,6 +23,17 @@
   border: 1px solid rgba(124, 58, 237, 0.16);
   box-shadow: inset 0 0 50px rgba(124, 58, 237, 0.05);
 }
+.ring::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  border-top-color: rgba(167, 139, 250, 0.48);
+  animation: ringTurn 18s linear infinite;
+}
+.ring.r2::after { animation-duration: 28s; animation-direction: reverse; opacity: 0.65; }
+.ring.r3::after { animation-duration: 38s; opacity: 0.4; }
 .ring.r1 { width: 200px; height: 200px; margin: -100px 0 0 -100px; }
 .ring.r2 { width: 300px; height: 300px; margin: -150px 0 0 -150px; border-color: rgba(124, 58, 237, 0.11); }
 .ring.r3 { width: 392px; height: 392px; margin: -196px 0 0 -196px; border-color: rgba(124, 58, 237, 0.07); }
@@ -66,6 +77,73 @@
 .orbiter.o-b .dot { background: #7c3aed; box-shadow: 0 0 10px 2px rgba(124, 58, 237, 0.85); }
 @keyframes orbSpin { to { transform: rotate(360deg); } }
 
+.flow-map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 392px;
+  height: 392px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.flow-map path {
+  stroke: rgba(167, 139, 250, 0.38);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-dasharray: 3 10;
+  animation: dataFlow 2.8s linear infinite;
+}
+.flow-map path:nth-child(2) { animation-delay: -0.9s; }
+.flow-map path:nth-child(3) { animation-delay: -1.8s; }
+
+.service-node {
+  position: absolute;
+  z-index: 7;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 999px;
+  background: rgba(8, 8, 8, 0.78);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(8px);
+  animation: nodeFloat 4s ease-in-out infinite;
+}
+.service-node i {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.9);
+}
+.service-node b {
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.node-systems { top: 0; left: 50%; transform: translateX(-50%); }
+.node-automation { top: 52%; left: calc(50% - 160px); animation-delay: -1.3s; }
+.node-integrations {
+  top: 52%;
+  left: calc(50% + 160px);
+  flex-direction: row-reverse;
+  transform: translateX(-100%);
+  animation-delay: -2.6s;
+}
+
+@keyframes ringTurn { to { transform: rotate(360deg); } }
+@keyframes dataFlow { to { stroke-dashoffset: -26; } }
+@keyframes nodeFloat {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -5px; }
+}
+
 /* ---- responsivo ---- */
 @media (max-width: 960px) {
   .ai-orb { height: 340px; }
@@ -76,9 +154,29 @@
   .orbiter.o-b { width: 252px; height: 252px; margin: -126px 0 0 -126px; }
   .orb-core { width: 82px; height: 82px; margin: -41px 0 0 -41px; }
   .orb-core svg { width: 40px; height: 40px; }
+  .flow-map { width: 330px; height: 330px; }
+  .node-automation { left: calc(50% - 134px); }
+  .node-integrations { left: calc(50% + 134px); }
+}
+
+@media (max-width: 560px) {
+  .ai-orb { height: 280px; }
+  .ring.r1 { width: 140px; height: 140px; margin: -70px 0 0 -70px; }
+  .ring.r2 { width: 200px; height: 200px; margin: -100px 0 0 -100px; }
+  .ring.r3 { width: 260px; height: 260px; margin: -130px 0 0 -130px; }
+  .orbiter.o-a { width: 140px; height: 140px; margin: -70px 0 0 -70px; }
+  .orbiter.o-b { width: 200px; height: 200px; margin: -100px 0 0 -100px; }
+  .orb-core { width: 76px; height: 76px; margin: -38px 0 0 -38px; }
+  .orb-core svg { width: 36px; height: 36px; }
+  .flow-map { width: 260px; height: 260px; }
+  .service-node { padding: 6px 8px; }
+  .service-node b { font-size: 9px; }
+  .node-systems { top: -2px; }
+  .node-automation { top: 51%; left: calc(50% - 108px); }
+  .node-integrations { top: 51%; left: calc(50% + 108px); }
 }
 
 /* respeita movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
-  .orb-pulse, .orbiter { animation: none; }
+  .orb-pulse, .orbiter, .ring::after, .flow-map path, .service-node { animation: none; }
 }

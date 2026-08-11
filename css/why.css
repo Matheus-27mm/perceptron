@@ -1,69 +1,138 @@
-/* ============================================================
-   POR QUE A PERCEPTRON — diferenciais (grid 6 + faixa)
-   ============================================================ */
 .sec-head .sec-sub {
-  margin-top: 16px; max-width: 640px;
-  color: var(--text-dim); font-size: clamp(0.95rem, 1.05vw, 1.05rem); line-height: 1.65;
+  margin-top: 16px;
+  max-width: 640px;
+  color: var(--text-dim);
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+  line-height: 1.65;
 }
-.sec-head h2 .accent-dot { color: var(--accent-soft); }
 
-.why-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+.trust-panel {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(420px, 1.18fr);
   margin-top: 46px;
-}
-.why-card {
-  background: var(--surface);
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 28px 26px;
-  transition: border-color .25s ease, transform .25s ease, background .25s ease;
-}
-.why-card:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
-  background: var(--surface-hover);
-  transform: translateY(-3px);
-}
-.why-ic {
-  width: 52px; height: 52px; border-radius: 14px;
-  display: grid; place-items: center; color: var(--accent-soft);
-  background: color-mix(in srgb, var(--accent) 13%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
-}
-.why-ic svg { width: 24px; height: 24px; }
-.why-card h3 { margin-top: 22px; font-size: 1.1rem; font-weight: 600; color: #fff; }
-.why-line { display: block; width: 30px; height: 2px; border-radius: 2px; background: var(--accent); margin: 14px 0; }
-.why-card p { color: var(--text-dim); font-size: 0.92rem; line-height: 1.6; }
-
-/* faixa inferior */
-.why-banner {
-  margin-top: 22px;
   background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 30px 34px;
-  display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
 }
-.why-banner-left { display: flex; align-items: center; gap: 22px; flex: 1 1 380px; }
-.why-banner-ic { width: 58px; height: 58px; flex-shrink: 0; color: var(--accent); opacity: .55; }
-.why-banner-ic svg { width: 100%; height: 100%; }
-.why-banner-left h3 { font-size: 1.15rem; font-weight: 600; color: #fff; }
-.why-banner-left p { margin-top: 8px; color: var(--text-dim); font-size: 0.9rem; line-height: 1.55; max-width: 470px; }
 
-.why-stats { display: flex; gap: 32px; flex-wrap: wrap; }
-.why-stat { min-width: 120px; max-width: 175px; }
-.why-stat .ws-ic {
-  display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 9px;
-  color: var(--accent-soft); background: color-mix(in srgb, var(--accent) 13%, transparent); margin-bottom: 10px;
+.trust-statement {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 520px;
+  padding: clamp(34px, 5vw, 62px);
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.18), transparent 42%),
+    var(--bg-dark);
 }
-.why-stat .ws-ic svg { width: 18px; height: 18px; }
-.why-stat .ws-v { font-size: 1.1rem; font-weight: 700; color: var(--accent-soft); }
-.why-stat .ws-l { margin-top: 3px; color: var(--text-mute); font-size: 0.8rem; line-height: 1.4; }
 
-@media (max-width: 900px) {
-  .why-grid { grid-template-columns: 1fr 1fr; }
-  .why-banner { flex-direction: column; align-items: flex-start; gap: 28px; }
-  .why-stats { width: 100%; gap: 24px; }
+.trust-statement::after {
+  content: "";
+  position: absolute;
+  right: -110px;
+  bottom: -110px;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(124, 58, 237, 0.22);
+  border-radius: 50%;
+  box-shadow: 0 0 0 52px rgba(124, 58, 237, 0.045), 0 0 0 104px rgba(124, 58, 237, 0.025);
 }
-@media (max-width: 600px) {
-  .why-grid { grid-template-columns: 1fr; }
+
+.trust-index {
+  position: relative;
+  z-index: 1;
+  color: var(--accent-soft);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.trust-statement h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 430px;
+  margin-top: 26px;
+  color: #fff;
+  font-size: clamp(1.75rem, 3vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.trust-statement p {
+  position: relative;
+  z-index: 1;
+  max-width: 390px;
+  margin-top: 24px;
+  color: var(--text-dim);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.trust-statement a {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  margin-top: 34px;
+  color: var(--accent-soft);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.trust-statement a:hover { color: #fff; }
+
+.trust-list { display: grid; }
+
+.trust-item {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 31px 36px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.22s ease;
+}
+
+.trust-item:last-child { border-bottom: 0; }
+.trust-item:hover { background: var(--surface-hover); }
+
+.trust-item > span {
+  padding-top: 3px;
+  color: var(--accent-soft);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.trust-item h3 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.trust-item p {
+  max-width: 510px;
+  margin-top: 8px;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .trust-panel { grid-template-columns: 1fr; }
+  .trust-statement {
+    min-height: 400px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 520px) {
+  .trust-statement { min-height: 360px; padding: 34px 26px; }
+  .trust-item { grid-template-columns: 30px 1fr; gap: 14px; padding: 25px 22px; }
 }

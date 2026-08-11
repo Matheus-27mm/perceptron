@@ -33,7 +33,7 @@ h1.hero-title, .hero-sub, .sec-head h2, .sec-head .sec-sub { overflow-wrap: brea
 /* ---------------- HERO ---------------- */
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; }   /* reforço do empilhamento */
-  .hero-visual { overflow: hidden; }           /* a orb não vaza pros lados */
+  .hero-visual { height: 380px; overflow: hidden; }           /* a orb não vaza pros lados */
 }
 @media (max-width: 560px) {
   .hero { padding-top: 58px; }
@@ -48,7 +48,8 @@ h1.hero-title, .hero-sub, .sec-head h2, .sec-head .sec-sub { overflow-wrap: brea
 
 /* ---------------- AI ORB ---------------- */
 @media (max-width: 560px) {
-  .ai-orb { height: 300px; }
+  .hero-visual { height: 310px; }
+  .ai-orb { height: 280px; }
 }
 
 /* ---------------- CARDS ---------------- */
