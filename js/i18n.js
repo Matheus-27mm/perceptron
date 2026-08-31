@@ -32,6 +32,7 @@
       'Ver soluções': 'See solutions',
       'Conversar sobre meu projeto': 'Talk about my project',
       'Ver sistemas em produção': 'See systems in production',
+      'Ver produtos em destaque': 'See featured products',
       'Resposta em até 1 dia útil · Sem compromisso': 'Reply within one business day · No commitment',
       'Sistemas': 'Systems',
       'Automação': 'Automation',
@@ -42,17 +43,25 @@
       'Engenharia que remove complexidade e cria escala.': 'Engineering that removes complexity and creates scale.',
       'Sistemas Sob Medida': 'Custom Systems',
       'Soluções proprietárias criadas para as regras e fluxos únicos do seu negócio.': 'Proprietary solutions built for the unique rules and flows of your business.',
+      '01 / Principal': '01 / Main service',
+      'Software desenhado para as regras, pessoas e fluxos da sua operação — sem adaptar o negócio a uma ferramenta genérica.': 'Software designed around the rules, people and flows of your operation — without forcing the business into a generic tool.',
       'Automação Operacional': 'Operational Automation',
       'Robôs e fluxos inteligentes que executam tarefas repetitivas em background 24/7.': 'Bots and intelligent flows that run repetitive tasks in the background 24/7.',
+      'Rotinas repetitivas executadas com consistência, rastreabilidade e menos intervenção manual.': 'Repetitive routines executed with consistency, traceability and less manual intervention.',
       'Engenharia de Dados': 'Data Engineering',
       'Integração, limpeza e consolidação de dados para visibilidade e inteligência.': 'Data integration, cleaning and consolidation for visibility and intelligence.',
+      'Dados integrados e organizados para dar visibilidade à operação e apoiar decisões.': 'Integrated, organized data that brings visibility to operations and supports decisions.',
       'Integrações & APIs': 'Integrations & APIs',
       'Conectamos sistemas, plataformas e canais para eliminar retrabalho.': 'We connect systems, platforms and channels to eliminate rework.',
+      'Sistemas, plataformas e canais conectados para reduzir retrabalho e informação dispersa.': 'Systems, platforms and channels connected to reduce rework and scattered information.',
       /* software em produção */
       'Sistemas desenvolvidos': "Systems we've built",
       'Software em produção. Resultados reais.': 'Software in production. Real results.',
       'Sistemas que construímos.': 'Systems we build.',
       'Produtos digitais em operação e soluções que estamos desenvolvendo.': 'Digital products in operation and solutions currently in development.',
+      'Produtos em destaque': 'Featured products',
+      'Dois sistemas. Contextos reais.': 'Two systems. Real contexts.',
+      'Uma operação em produção e um produto jurídico em desenvolvimento.': 'One live operation and one legal product in development.',
       'Em produção': 'In production',
       'Em desenvolvimento': 'In development',
       'Sistema jurídico completo — processos, prazos, clientes e assistente jurídico com IA.': 'Complete legal system — cases, deadlines, clients and an AI legal assistant.',
@@ -60,6 +69,12 @@
       'Gestão para clínicas de estética — CRM, agenda, financeiro e central de WhatsApp em um só lugar.': 'Management for aesthetic clinics — CRM, scheduling, finance and a WhatsApp hub in one place.',
       'Unificou agendamento, vendas e relacionamento com o paciente.': 'Unified scheduling, sales and patient relationships.',
       'Agenda, vendas e relacionamento com o paciente em uma única operação.': 'Scheduling, sales and patient relationships in a single operation.',
+      'Agenda': 'Scheduling',
+      'Financeiro': 'Finance',
+      'Processos': 'Cases',
+      'Prazos': 'Deadlines',
+      'Clientes': 'Clients',
+      'IA jurídica': 'Legal AI',
       'CRM sob medida para o comercial — pipeline, negócios, financeiro e relatórios em tempo real.': 'Custom CRM for sales — pipeline, deals, finance and real-time reports.',
       'Quer ver mais detalhes de algum projeto?': 'Want to see more details on a project?',
       'Fale com a nossa equipe →': 'Talk to our team →',
@@ -158,6 +173,10 @@
       'Política de Privacidade': 'Privacy Policy',
       'Termos de Serviço': 'Terms of Service',
       'Engenharia de software sob medida': 'Custom software engineering'
+      ,'Engenharia de software para operações que precisam de clareza, integração e continuidade.': 'Software engineering for operations that need clarity, integration and continuity.'
+      ,'Produtos': 'Products'
+      ,'Processo': 'Process'
+      ,'Vamos conversar': "Let's talk"
     }
   };
 

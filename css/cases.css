@@ -1,114 +1,172 @@
-/* ============================================================
-   CASES — "Em produção" em destaque · "Em desenvolvimento" discreto
-   ============================================================ */
+.cases-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 22px;
+  align-items: stretch;
+}
 
-.cases-group + .cases-group { margin-top: 56px; }
+.case-premium {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  flex-shrink: 1;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(21, 21, 22, 0.72);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
 
-.cases-label {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-mute);
-  margin-bottom: 18px;
+.case-premium::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.045);
+}
+
+.case-premium .video-container {
+  aspect-ratio: 16 / 10;
+  padding: 24px 24px 0;
+  border-bottom: 0;
+  background:
+    radial-gradient(circle at 50% 82%, rgba(139, 30, 63, 0.18), transparent 54%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent),
+    #0d0d0d;
+}
+
+.case-premium .video-container::before {
+  --cc: rgba(182, 43, 75, 0.2);
+}
+
+.case-premium .video-container img.shot {
+  object-fit: contain;
+  padding: 0;
+  opacity: 0.84;
+  border: 1px solid rgba(230, 230, 230, 0.1);
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.48);
+  transform: translateY(5px);
+}
+
+.case-premium:hover .video-container img.shot {
+  opacity: 0.96;
+  transform: translateY(0);
+}
+
+.case-premium .carousel-card-body {
+  padding: 28px 28px 30px;
+}
+
+.case-status {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 17px;
+  color: var(--text-mute);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
-.cases-label::before {
+
+.case-status::before {
   content: "";
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--text-mute);
-  flex-shrink: 0;
-}
-.cases-label.is-live { color: var(--accent-soft); }
-.cases-label.is-live::before {
-  background: #34d399;
-  box-shadow: 0 0 8px 1px rgba(52, 211, 153, 0.7);
+  background: currentColor;
 }
 
-.case-featured,
-.case-muted { width: 100%; }
+.case-status.is-live {
+  color: var(--accent-readable);
+}
 
-.case-featured {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: stretch;
+.case-status.is-live::before {
+  box-shadow: 0 0 9px rgba(217, 75, 104, 0.72);
 }
-.case-featured .video-container {
-  aspect-ratio: auto;
-  min-height: 280px;
-  border-bottom: none;
-  border-right: 1px solid var(--line);
-  padding: 26px;
-  background:
-    radial-gradient(circle at 50% 45%, rgba(124, 58, 237, 0.09), transparent 62%),
-    var(--bg-dark);
-}
-.case-featured .video-container img.shot {
-  object-fit: contain;
-  padding: 0;
-  opacity: 0.72;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
-}
-.case-featured:hover .video-container img.shot {
-  transform: none;
-  opacity: 0.82;
-}
-.case-featured .carousel-card-body {
-  padding: 34px 32px;
-  align-self: center;
-}
-.case-featured h3 { font-size: 17px; }
-.case-featured .desc { font-size: 14px; }
 
-@media (max-width: 760px) {
-  .case-featured { grid-template-columns: 1fr; }
-  .case-featured .video-container {
-    aspect-ratio: 16/9;
-    min-height: 0;
-    padding: 16px;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
+.case-premium h3 {
+  margin-bottom: 12px;
+  color: #fff;
+  font-family: "Space Grotesk", var(--sans);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.case-premium .desc {
+  max-width: 52ch;
+  color: var(--text-dim);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+.case-scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 22px;
+}
+
+.case-scope span {
+  padding: 6px 9px;
+  border: 1px solid rgba(230, 230, 230, 0.09);
+  border-radius: 999px;
+  color: #aaaab0;
+  background: rgba(13, 13, 13, 0.46);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.03em;
+}
+
+.case-premium .problem {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(230, 230, 230, 0.08);
+  color: #b9b9be;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.case-lexnormus {
+  margin-top: 44px;
+  background: rgba(18, 18, 19, 0.64);
+}
+
+.case-lexnormus .video-container img.shot {
+  opacity: 0.68;
+  filter: saturate(0.78);
+}
+
+.case-lexnormus:hover .video-container img.shot {
+  opacity: 0.88;
+}
+
+@media (max-width: 820px) {
+  .cases-showcase {
+    grid-template-columns: 1fr;
   }
-  .case-featured .carousel-card-body { padding: 24px 22px; }
+
+  .case-lexnormus {
+    margin-top: 0;
+  }
 }
 
-.cases-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-@media (max-width: 900px) {
-  .cases-grid { grid-template-columns: repeat(2, 1fr); }
-}
 @media (max-width: 560px) {
-  .cases-grid { grid-template-columns: 1fr; }
-}
+  .cases-showcase {
+    gap: 16px;
+  }
 
-.case-muted {
-  background: transparent;
-  border-color: var(--line-soft);
-}
-.case-muted .video-container {
-  aspect-ratio: 16/10;
-  background: transparent;
-  border-bottom-color: var(--line-soft);
-}
-.case-muted .video-container img.shot {
-  opacity: 0.42;
-  filter: saturate(0.65);
-  transition: opacity 0.3s ease;
-}
-.case-muted .video-container::before { --cc: rgba(255, 255, 255, 0.1); }
-.case-muted .carousel-card-body { padding: 16px 18px 18px; }
-.case-muted h3 { font-size: 13.5px; color: var(--text-dim); }
-.case-muted .desc { font-size: 12px; color: var(--text-mute); line-height: 1.5; }
+  .case-premium {
+    border-radius: 14px;
+  }
 
-.case-muted:hover { border-color: var(--line); }
-.case-muted:hover .video-container img.shot { opacity: 0.6; }
-.case-muted:hover .video-container img.shot { transform: none; }
+  .case-premium .video-container {
+    padding: 14px 14px 0;
+  }
+
+  .case-premium .carousel-card-body {
+    padding: 22px 20px 24px;
+  }
+}

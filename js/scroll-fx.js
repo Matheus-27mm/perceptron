@@ -43,7 +43,7 @@
     .fromTo('.hero-title', { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, 0.2)
     .fromTo('.hero-sub', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.48)
     .fromTo('.hero-actions', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.62)
-    .fromTo('.hero-logos', { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, 0.78);
+    .fromTo('.hero-action-note', { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, 0.76);
 
   // 6. Cabeçalhos de Seções (.sec-head)
   gsap.utils.toArray('.sec-head').forEach(function (el) {
@@ -54,7 +54,7 @@
   });
 
   // 7. Grade de Serviços (stagger suave)
-  var servicesGrid = document.querySelector('.services-grid');
+  var servicesGrid = document.querySelector('.services-editorial');
   if (servicesGrid) {
     gsap.from(servicesGrid.children, {
       y: 40, opacity: 0, duration: 0.8, ease: 'power2.out', stagger: 0.12,
